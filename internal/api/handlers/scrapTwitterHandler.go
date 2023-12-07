@@ -8,7 +8,6 @@ import (
 	"valtar/internal/api/utils"
 )
 
-// HandleScrapTwitterRequest handles the request to scrape a Twitter page for media content
 func HandleScrapTwitterRequest(w http.ResponseWriter, r *http.Request) {
 	tweetURL := r.URL.Query().Get("tweetUrl")
 	if tweetURL == "" {
@@ -26,7 +25,7 @@ func HandleScrapTwitterRequest(w http.ResponseWriter, r *http.Request) {
 
 	if len(mediaURLs) == 0 {
 		log.Println("No media URLs found in the tweet")
-		utils.RespondWithJSON(w, http.StatusOK, []string{}) // Respond with an empty array or appropriate message
+		utils.RespondWithJSON(w, http.StatusOK, []string{})
 		return
 	}
 

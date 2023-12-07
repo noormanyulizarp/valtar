@@ -15,13 +15,15 @@ func NewHandler() *Handler {
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch r.URL.Path {
 	case "/":
-		APIInfo(w, r) // Directly call APIInfo for the root URL
+		APIInfo(w, r)
 	case "/rectangle/area":
 		CalculateRectangleArea(w, r)
 	case "/twitter/media":
 		HandleTwitterMediaRequest(w, r)
 	case "/scrapTwitter":
 		HandleScrapTwitterRequest(w, r)
+	case "/goScrapTwitter":
+		HandleGoScrapTwitterRequest(w, r)
 	default:
 		utils.RespondWithError(w, "Not Found", http.StatusNotFound)
 	}

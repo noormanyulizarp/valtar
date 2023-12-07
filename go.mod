@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.1
+	github.com/n0madic/twitter-scraper v0.0.0-20231104223941-296710769dd8
 	golang.org/x/oauth2 v0.15.0
 )
 
