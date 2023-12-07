@@ -1,17 +1,18 @@
-// valtar/cmd/server/main.go
+// cmd/server/main.go
 package main
 
 import (
-    "fmt"
-    "net/http"
-    "valtar/internal/api/handlers"
+	"fmt"
+	"log"
+	"net/http"
+	"valtar/internal/api/handlers"
 )
 
 func main() {
-    handler := handlers.NewHandler()
-
-    http.Handle("/", handler)
-
-    fmt.Println("Server is starting on port 8080...")
-    http.ListenAndServe(":8080", nil)
+	handler := handlers.NewHandler()
+	port := "8080"
+	fmt.Printf("Server is starting on port %s...\n", port)
+	if err := http.ListenAndServe(":"+port, handler); err != nil {
+		log.Fatalf("Failed to start server: %v", err)
+	}
 }
