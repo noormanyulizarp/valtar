@@ -8,8 +8,8 @@ import (
 
 func APIInfo(w http.ResponseWriter, r *http.Request) {
 	info := map[string]string{
-		"message":   "Welcome to the Valtar API",
-		"endpoints": "/rectangle/area - Calculate the area of a rectangle",
+		"message":   "example for /rectangle/area API hit -> /rectangle/area?width=10&height=5",
+		"endpoints": "/rectangle/area?width=[value]&heights=[value]",
 	}
 	utils.RespondWithJSON(w, http.StatusOK, info)
 }
