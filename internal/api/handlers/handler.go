@@ -1,8 +1,9 @@
-// veltern/internal/api/handler.go
-package api
+// valtar/internal/api/handlers/handler.go
+package handlers
 
 import (
 	"net/http"
+	"valtar/internal/api/utils"
 )
 
 type Handler struct{}
@@ -14,10 +15,10 @@ func NewHandler() *Handler {
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch r.URL.Path {
 	case "/":
-		h.APIInfo(w, r)
+		APIInfo(w, r)
 	case "/rectangle/area":
-		h.CalculateRectangleArea(w, r)
+		CalculateRectangleArea(w, r)
 	default:
-		respondWithError(w, "Not Found", http.StatusNotFound)
+		utils.RespondWithError(w, "Not Found", http.StatusNotFound)
 	}
 }

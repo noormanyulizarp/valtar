@@ -4,11 +4,11 @@ package main
 import (
     "fmt"
     "net/http"
-    "valtar/internal/api"
+    "valtar/internal/api/handlers"
 )
 
 func main() {
-    handler := api.NewHandler()
+    handler := handlers.NewHandler()
 
     http.Handle("/", handler)
 
