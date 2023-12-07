@@ -2,13 +2,13 @@
 
 export_history() {
   # Export Fish history
-  cp ~/.config/fish/fish_history fish_history_backup
+  cp .local/share/fish/fish_history fish_history_backup
   echo "Fish history exported to fish_history_backup"
 }
 
 import_history() {
   # Import Fish history
-  cp fish_history_backup ~/.config/fish/fish_history
+  cp fish_history_backup .local/share/fish/fish_history
   echo "Fish history imported"
 }
 

@@ -1,0 +1,18 @@
+- cmd: clear
+  when: 1701934645
+- cmd: exa --tree --level=1
+  when: 1701934654
+- cmd: exa --tree --level=3
+  when: 1701937319
+- cmd: go mod tidy
+  when: 1701937463
+- cmd: exa --tree --level=5
+  when: 1701938301
+- cmd: chmod +x manage_fish_history.sh
+  when: 1701938516
+  paths:
+    - manage_fish_history.sh
+- cmd: ./manage_fish_history.sh create
+  when: 1701938531
+- cmd: exit
+  when: 1701938566
